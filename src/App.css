@@ -1,0 +1,110 @@
+
+.App {
+  text-align: center;
+  background-color: #282c34;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #282c34;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #da472d;
+  color: white;
+}
+
+.ant-carousel .slick-dots li{
+  width: 32px !important;
+}
+.ant-carousel .slick-dots li.slick-active{
+  width: 48px !important;
+}
+.ant-carousel .slick-dots li button, .ant-carousel .slick-dots li.slick-active button {
+  height: 6px !important;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: azure;
+  padding: 20px 10%;
+}
+
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 3px solid #da472d;
+}
+
+.separator:not(:empty)::before {
+  margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .25em;
+}
+
+.section-header {
+  font-size: 20px;
+  margin-right: 5%;
+}
+
+.showcase{
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+@media screen and (max-Width: 1200px) {
+  .showcase{
+    background-size: cover;
+  }
+}
+
+.imgDesktop {
+  width: 20%;
+  float: left;
+  margin: 10%
+}
+
+p {
+  text-align: justify;
+  font-size: 20px;
+  color:azure;
+}
