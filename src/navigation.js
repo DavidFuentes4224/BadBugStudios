@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
-import { Affix, Button } from 'antd';
+import { Link } from 'react-router-dom';
+import { Home } from './pages/home';
 
 
 export const NavBar = () => {
-
-  const [top, setTop] = useState(10);
-  const [bottom, setBottom] = useState(10);
+  const titleStyle = {
+    float: 'left',
+    fontSize: '32px',
+    padding: '0px 5%',
+    color: 'azure'
+  }
   return (
     <>
-       <div class="topnav">
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-        <a href="#news">Projects</a>
-        <a class="active" href="#home">Home</a>
-    </div> 
+      <div class="topnav">
+        <div style={titleStyle}>BAD BUG STUDIOS</div>
+        <Link to="/skyclimbers">Sky Climbers</Link>
+        <Link class="active" to="/">Home</Link>
+      </div>
     </>
   );
 };
