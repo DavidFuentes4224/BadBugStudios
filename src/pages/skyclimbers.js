@@ -1,17 +1,27 @@
 import Unity, { UnityContext } from "react-unity-webgl";
-import React, { useEffect } from "react";
+import React, { useState,useEffect } from "react";
 export const SkyClimbers = () => {
-  // useEffect(function () {
-  //   unityContext.on("canvas", function (canvas) {
-  //     canvas.width = '100%';
-  //     canvas.height = '50%';
-  //   });
-  // }, []);
+  const [progression, setProgression] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(function () {
+    unityContext.on("progress", function (progression) {
+      setProgression(progression);
+    });
+    unityContext.on("loaded", function () {
+      setIsLoaded(true);
+    });
+  }, []);
   const unityContext = new UnityContext({
-    loaderUrl: "Build/Sky Climbers 6-10.loader.js",
-    dataUrl: "Build/Sky Climbers 6-10.data",
-    frameworkUrl: "/Build/Sky Climbers 6-10.framework.js",
-    codeUrl: "Build/Sky Climbers 6-10.wasm",
+    loaderUrl: "Build/Sky Climbers 6-13.loader.js",
+    dataUrl: "Build/Sky Climbers 6-13.data",
+    frameworkUrl: "/Build/Sky Climbers 6-13.framework.js",
+    codeUrl: "Build/Sky Climbers 6-13.wasm",
   });
-    return <Unity unityContext={unityContext} style={{ width: "100%", height: "auto" }}/>;
+  return (
+    <div>
+      <p  style={{ visibility: isLoaded ? "hidden" : "visible" }}>Loading {progression * 100} percent...</p>
+      <Unity  style={{ visibility: isLoaded ? "visible" : "hidden" }} unityContext={unityContext} style={{ width: "80%", height: "auto" }}/>
+    </div>
+  );
 }
