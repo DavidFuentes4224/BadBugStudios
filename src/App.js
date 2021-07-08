@@ -1,11 +1,10 @@
 import './App.css';
 import 'antd/dist/antd.css';
 import './index.css';
-import { NavBar } from "./navigation";
 import { Foot } from "./sections/footer";
 import { Home } from './pages/home'
-import {SkyClimbers} from './pages/skyclimbers'
-
+import { SkyClimbers } from './pages/skyclimbers'
+import React, { useState } from 'react';
 import {
   BrowserRouter,
   Switch,
@@ -14,31 +13,44 @@ import {
 } from "react-router-dom";
 
 
+
 function App() {
+  const [tab, setTab] = useState('home');
+  document.title = "Bad Bug Studios";
   const titleStyle = {
     float: 'left',
     fontSize: '32px',
     padding: '0px 5%',
     color: 'azure'
   }
+  function changeTab(tab) {
+    setTab(tab);
+  }
   return (
     <>
       <div className="App">
+      <title>My Portfolio</title>
+
         <BrowserRouter>
-          <div class="topnav">
+          <div className="topnav">
             <div style={titleStyle}>BAD BUG STUDIOS</div>
-            <Link to="/skyclimbers">Sky Climbers</Link>
-            <Link class="active" to="/">Home</Link>
+            <Link className={tab === 'skyclimbers' ? 'active' : ''}
+              to="/skyclimbers"
+              onClick={() => changeTab('skyclimbers')}
+            >Sky Climbers</Link>
+            <Link className={tab === 'home' ? 'active' : ''}
+              to="/"
+              onClick={() => changeTab('home')}>Home</Link>
 
           </div>
           <Switch>
-          <Route path="/skyclimbers">
+            <Route path="/skyclimbers">
               <SkyClimbers />
             </Route>
             <Route path="/">
               <Home />
             </Route>
-            
+
           </Switch>
         </BrowserRouter>
         <Foot />

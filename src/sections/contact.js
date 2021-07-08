@@ -1,4 +1,4 @@
-import { Form, Input, InputNumber, Button } from 'antd';
+import { Form, Input, Button } from 'antd';
 import { Separator } from '../templates/separator';
 import{ init } from 'emailjs-com';
 init("user_ucMeB39XE7h1D9QqH1S0a");
@@ -37,16 +37,9 @@ export const ContactForm = () => {
           .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
       }
 
-      const backgroundStyle = {
-        backgroundColor: '#222',
-        height: '30vh',
-        margin: '0px, 20px',
-        width: '100%'
-    }
-
       return (
           <>
-          <div style={backgroundStyle}>
+          <div className='backgroundStyle contact'>
             <Separator header="Contact"/>
             <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
             <Form.Item

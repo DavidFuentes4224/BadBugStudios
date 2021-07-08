@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { } from 'react';
 
 export const ShowCase = (props) => {
     const headerStyle = {
@@ -7,8 +7,8 @@ export const ShowCase = (props) => {
         alignItem: 'center',
         height: '90%',
         width: '100%',
-        color: 'white',
-        textShadow: '2px 2px #000' 
+        color: 'azure',
+        textShadow: '2px 2px #333' 
     }
     return (
         <>

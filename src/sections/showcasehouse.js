@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { } from 'react';
 import { Carousel } from 'antd';
 import {ShowCase} from "../templates/showcase"
 import logo1 from '../images/background1.png'

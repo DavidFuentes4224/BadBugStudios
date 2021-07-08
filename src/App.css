@@ -1,122 +1,284 @@
-
 .App {
-  text-align: center;
-  background-color: #282c34;
+    text-align: center;
+    background-color: #282c34;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
+
+.center {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+@media screen and (max-Width: 900px) {
+    .center {
+        width: 80%;
+    }
+}
+
 
 /* Add a black background color to the top navigation */
+
 .topnav {
-  background-color: #282c34;
-  overflow: hidden;
+    background-color: #282c34;
+    overflow: hidden;
 }
+
 
 /* Style the links inside the navigation bar */
+
 .topnav a {
-  float: right;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
 }
+
 
 /* Change the color of links on hover */
+
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+    background-color: #ddd;
+    color: black;
 }
+
 
 /* Add a color to the active/current link */
+
 .topnav a.active {
-  background-color: #da472d;
-  color: white;
+    background-color: #da472d;
+    color: white;
 }
 
-.ant-carousel .slick-dots li{
-  width: 32px !important;
-}
-.ant-carousel .slick-dots li.slick-active{
-  width: 48px !important;
-}
-.ant-carousel .slick-dots li button, .ant-carousel .slick-dots li.slick-active button {
-  height: 6px !important;
+.ant-carousel .slick-dots li {
+    width: 32px !important;
 }
 
-.ant-form-item-label > label{
-  color:azure !important;
-  font-size: 16px !important;
+.ant-carousel .slick-dots li.slick-active {
+    width: 48px !important;
 }
 
-.ant-form{
-  width: 80%;
+.ant-carousel .slick-dots li button,
+.ant-carousel .slick-dots li.slick-active button {
+    height: 6px !important;
+}
+
+.ant-form-item-label>label {
+    color: azure !important;
+    font-size: 16px !important;
+}
+
+.ant-form {
+    /* padding: 0px 10% !important; */
+    margin: 0px 10% !important;
 }
 
 .separator {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: azure;
-  padding: 20px 10%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: azure;
+    padding: 20px 10%;
 }
 
 .separator::after {
-  content: '';
-  flex: 1;
-  border-bottom: 3px solid #da472d;
+    content: '';
+    flex: 1;
+    border-bottom: 3px solid #da472d;
 }
 
 .separator:not(:empty)::before {
-  margin-right: .25em;
+    margin-right: .25em;
 }
 
 .separator:not(:empty)::after {
-  margin-left: .25em;
+    margin-left: .25em;
 }
 
 .section-header {
-  font-size: 32px;
-  margin-right: 5%;
+    font-size: 2vw;
+    margin-right: 5%;
+}
+@media screen and (max-Width: 1200px) {
+    .section-header {
+        font-size: 4vw;
+    }
+}
+@media screen and (max-Width: 900px) {
+    .section-header {
+        font-size: 4vw;
+    }
 }
 
-.showcase{
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100%;
+.showcase {
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-size: 2vw;
+    box-shadow: inset 0px 0px 50px black;
+}
+
+@media screen and (max-Width: 1300px) {
+    .showcase {
+        background-size: cover;
+        font-size: 4vw;
+    }
+}
+
+.backgroundStyle {
+    background-color: #111;
+    height: 50vh;
+    padding: 0px 20%;
 }
 
 @media screen and (max-Width: 1200px) {
-  .showcase{
-    background-size: cover;
-  }
+    .backgroundStyle {
+        padding: 0px 10%;
+    }
+}
+
+@media screen and (max-Width: 900px) {
+    .backgroundStyle {
+        padding: 0px 5%;
+    }
+}
+
+.about{
+    height: 100%;
+    padding-bottom: 10px;
+}
+
+.contact{
+    background-color: #222;
+    height: 100%;
+    padding-bottom: 10px;
+}
+
+.instructionImg{
+    width: 5%;    
+    height: auto;
+    display: inline-block;
+    image-rendering: crisp-edges;
+    margin-right: 3%;
+    max-width: 50px;
+}
+
+.instruction {
+    display: inline-block;
+    color: azure;
+    width: 100%;
+    font-size: 30px;
+    margin:10px 0px;
+}
+@media screen and (max-Width: 1200px) {
+    .instruction {
+        font-size: 3vw;
+    }
+}
+@media screen and (max-Width: 900px) {
+    .instruction {
+        font-size: 4vw;
+    }
+}
+
+ul.instructions {
+    text-align: left;
+    padding-left: 5%;
+    list-style-type: none;
+    max-height: 300px;
+}
+
+.aboutInfo {
+    text-align: justify;
+    font-size: 24px;
+    color: azure;
+}
+
+@media screen and (max-Width: 1200px) {
+    .aboutInfo {
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (max-Width: 900px) {
+    .aboutInfo {
+        font-size: 3vw;
+        text-align: left;
+
+    }
 }
 
 .imgDesktop {
-  width: 10%;
-  float: left;
-  margin: 0% 10px;
-  border: 2px solid azure;
-  border-radius: 100% ;
+    width: 200px;
+    float: left;
+    margin: 0% 10px;
+    border: 2px solid azure;
+    border-radius: 100%;
 }
 
-p {
-  text-align: justify;
-  font-size: 20px;
-  color:azure;
-  padding: 0px 5%;
+@media screen and (max-Width: 1200px) {
+    .imgDesktop {
+        width: 30%;
+    }
+}
+@media screen and (max-Width: 900px) {
+    .imgDesktop {
+        display: block;
+        width: 50%;
+        margin: auto;
+        float: none;
+    }
+}
+
+.socialImage{
+    height: auto;
+    image-rendering: crisp-edges;
+    margin: 20px 30px;
+    display: inline-block;
+    color: azure;
+    font-size: 20px;
+}
+@media screen and (max-Width: 1200px) {
+    .socialImage {
+        margin: 20px 10px;
+        font-size: 2vw;
+    }
+}
+@media screen and (max-Width: 900px) {
+    .socialImage {
+        margin: 20px 10px;
+        font-size: 3vw;
+    }
+}
+
+
+.socialImage::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    background: azure;
+    transition: width .3s;
+    margin: auto;
+}
+
+.socialImage:hover::after {
+    width: 100%;
 }
