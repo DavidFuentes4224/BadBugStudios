@@ -22,10 +22,7 @@ export const ShowCaseHouse = () => {
       <div style={contentStyle}><ShowCase header={"Sky Climbers"} url={logo1}/></div>
     </div>
     <div>
-      <div style={contentStyle}><ShowCase header={"VR Project"}/></div>
-    </div>
-    <div>
-      <div style={contentStyle}><ShowCase header={"Another Project"}/></div>
+      <div style={contentStyle}><ShowCase header={"Upcoming Project"}/></div>
     </div>
   </Carousel>
     </>);

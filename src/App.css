@@ -1,3 +1,22 @@
+a {
+    color: white !important;
+    padding: 1em 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+a:hover {
+    color:white !important;
+}
+
+a:active {
+background-color: black;
+}
+
+a:visited {
+background-color: #ccc;
+}
+
 .App {
     text-align: center;
     background-color: #282c34;
@@ -162,6 +181,7 @@
 
 .about{
     height: 100%;
+    min-height: 350px;
     padding-bottom: 10px;
 }
 

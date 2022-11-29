@@ -1,15 +1,15 @@
 import React, {  } from 'react';
 import { Separator } from "../templates/separator";
-import logo from "../images/logo.png";
+import me from "../images/Me.jpg";
 
 export const AboutSection = () => {
     return (
         <>
             <div className='backgroundStyle about'>
-                <Separator header="About Bad Bug Studios" />
-                <img src={logo} className='imgDesktop' alt={'logo'} />
-                <p className='aboutInfo'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu est nisl. In finibus massa sit amet congue suscipit. Etiam nunc quam, consequat vitae felis eu, mollis ultrices nulla. Nunc mi lectus, fermentum sed scelerisque vitae, mattis in diam. Donec sollicitudin, est sit amet ultrices elementum, nulla justo pulvinar arcu, a fermentum augue mauris et diam. Aliquam placerat orci ut consectetur egestas. Suspendisse lobortis felis quis congue rhoncus. Nullam in rutrum ex. Vestibulum lacus quam, imperdiet eget congue auctor, imperdiet ut enim. Nam pretium purus quis enim luctus rutrum. </p>
-                <p className='aboutInfo'> Morbi vel sem accumsan sem porttitor viverra. Donec eget finibus est, eu convallis ante. Etiam nec nulla non erat accumsan dictum. Nunc metus eros, fermentum id augue vitae, accumsan sodales lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis luctus malesuada ipsum. Pellentesque efficitur lobortis justo, sed semper eros feugiat sed. Sed pretium felis in posuere commodo. </p>
+                <Separator header="About David" />
+                <img src={me} className='imgDesktop' alt={'profile picture'} />
+                <p className='aboutInfo'> I am a software engineer who is passionate about gaming and learning. I am a strong advocate of personal growth and hard work. I am both a full-time employee as well a full-time student. In my spare time, I express myself creatively by making games using Unreal Engine and Unity. When I'm not in front of a screen, I enjoy playing music and retro photography. </p>
+                <p className='aboutInfo'>Please keep in mind that is website in under construction! Updates should be coming soon . . .</p>
             </div>
         </>
         );

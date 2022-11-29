@@ -16,7 +16,7 @@ import {
 
 function App() {
   const [tab, setTab] = useState('home');
-  document.title = "Bad Bug Studios";
+  document.title = "David Fuentes";
   const titleStyle = {
     float: 'left',
     fontSize: '32px',
@@ -33,7 +33,7 @@ function App() {
 
         <BrowserRouter>
           <div className="topnav">
-            <div style={titleStyle}>BAD BUG STUDIOS</div>
+            <div style={titleStyle}>David Fuentes // Bad Bug Studios</div>
             <Link className={tab === 'skyclimbers' ? 'active' : ''}
               to="/skyclimbers"
               onClick={() => changeTab('skyclimbers')}
