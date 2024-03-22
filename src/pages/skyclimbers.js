@@ -14,7 +14,7 @@ const Instruction = (msg,icon) => {
   );
 }
 
-export const SkyClimbers = () => {
+export const SkyClimbers = () => {  
   const [progression, setProgression] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   
@@ -25,6 +25,7 @@ export const SkyClimbers = () => {
     codeUrl: "Build/Sky Climbers WEBGL.wasm",
   });
 
+  /* eslint-disable */
   useEffect(function () {
     unityContext.on("progress", function (progression) {
       setProgression(progression);
@@ -41,11 +42,11 @@ export const SkyClimbers = () => {
       });
     };
   }, []);
-
+/* eslint-enable */
   return (
     <div style={{height: '100vh'}} className={'backgroundStyle'}>
       <p  style={{ visibility: isLoaded ? "hidden" : "visible", color:'azure' }}>Loading {progression * 100} percent...</p>
-      <Unity  style={{ visibility: isLoaded ? "visible" : "hidden" }} unityContext={unityContext} style={{ width: "100%", height: "auto" }}/>
+      <Unity  style={{ visibility: isLoaded ? "visible" : "hidden" }} unityContext={unityContext}/>
       <div>
         <Separator header="How To Play"/>
         <ul className={'instructions'}>
