@@ -7,12 +7,11 @@ import { SkyClimbers } from './pages/skyclimbers'
 import React, { useState } from 'react';
 import {
   BrowserRouter,
-  Switch,
+  Routes,
   Route,
-  Link
+  NavLink,
 } from "react-router-dom";
-
-
+import NoPage from './pages/nopage.jsx';
 
 function App() {
   const [tab, setTab] = useState('home');
@@ -29,29 +28,19 @@ function App() {
   return (
     <>
       <div className="App">
-      <title>My Portfolio</title>
-
+        <title>My Portfolio</title>
+        
         <BrowserRouter>
-          <div className="topnav">
-            <div style={titleStyle}>David Fuentes // Bad Bug Studios</div>
-            <Link className={tab === 'skyclimbers' ? 'active' : ''}
-              to="/skyclimbers"
-              onClick={() => changeTab('skyclimbers')}
-            >Sky Climbers</Link>
-            <Link className={tab === 'home' ? 'active' : ''}
-              to="/"
-              onClick={() => changeTab('home')}>Home</Link>
-
-          </div>
-          <Switch>
-            <Route path="/skyclimbers">
-              <SkyClimbers />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-
-          </Switch>
+        <div className='topnav'>
+          <div style={titleStyle}>David Fuentes // Bad Bug Studios</div>
+          <NavLink className={tab === 'skyclimbers' ? 'active' : ''} to="/skyclimbers"onClick={() => changeTab('skyclimbers')}>Sky Climbers</NavLink>
+          <NavLink className={tab === 'home' ? 'active' : ''} to="/"onClick={() => changeTab('home')}>Home</NavLink>
+        </div>
+          <Routes path="/">
+            <Route index element={<Home/>}/>
+            <Route path="skyclimbers" element={<SkyClimbers/>}/>
+            <Route path="*" element={<NoPage/>}/>
+          </Routes>
         </BrowserRouter>
         <Foot />
       </div>

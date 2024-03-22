@@ -12,12 +12,14 @@ const layout = {
     },
   };
 
+  /* eslint-disable no-template-curly-in-string*/
   const validateMessages = {
-    required: '${label} is required!',
+    required: "'${Name}' is required!", 
     types: {
-      email: '${label} is not a valid email!',
+      email: "'${Email}' is not a valid email!",
     }
   };
+  /* eslint-enable no-template-curly-in-string*/
 
 export const ContactForm = () => {
     const onFinish = (values) => {
