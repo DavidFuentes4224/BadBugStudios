@@ -46,7 +46,9 @@ export const SkyClimbers = () => {
   return (
     <div style={{height: '100vh'}} className={'backgroundStyle'}>
       <p  style={{ visibility: isLoaded ? "hidden" : "visible", color:'azure' }}>Loading {progression * 100} percent...</p>
-      <Unity  style={{ visibility: isLoaded ? "visible" : "hidden" }} unityContext={unityContext}/>
+      <div style={{ width: '100%', maxWidth: '1920px', aspectRatio: '16/9', margin: '0 auto', position: 'relative' }}>
+        <Unity style={{ visibility: isLoaded ? "visible" : "hidden", width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }} width={1920} height={1080} unityContext={unityContext}/>
+      </div>
       <div>
         <Separator header="How To Play"/>
         <ul className={'instructions'}>
