@@ -1,7 +1,2 @@
-# Netlify site configuration
-# Deploy manually with: deploy.bat
-# Unity build files are uncompressed (no .gz) so no special Content-Encoding headers are needed.
-# Netlify's CDN handles gzip compression automatically.
-
 [build]
   publish = "build"
