@@ -1,6 +1,5 @@
 import Unity, { UnityContext } from "react-unity-webgl";
 import React, { useState, useEffect, useRef } from "react";
-import { Separator } from "../templates/separator";
 import iconSpace from '../images/Icon_Space.png';
 import iconCtrl  from '../images/Icon_Ctrl.png';
 import iconR     from '../images/Icon_R.png';
@@ -36,7 +35,11 @@ const SkyClimbers = () => {
   return (
     <div className="sky-climbers-page">
       <div className="sky-climbers-inner">
-        <Separator header="Sky Climbers" />
+        <div className="section-header-group">
+          <p className="section-label">Bad Bug Studios</p>
+          <h2 className="section-title">Sky Climbers</h2>
+          <div className="section-divider"></div>
+        </div>
         <p style={{ visibility: isLoaded ? 'hidden' : 'visible' }}>
           Loading {Math.round(progression * 100)}%…
         </p>
@@ -52,14 +55,16 @@ const SkyClimbers = () => {
             unityContext={unityContext}
           />
         </div>
-        <div style={{ marginTop: '32px' }}>
-          <Separator header="How To Play" />
+        <div className="section-header-group" style={{ marginTop: '32px', marginBottom: '20px' }}>
+            <p className="section-label">Controls</p>
+            <h2 className="section-title">How To Play</h2>
+            <div className="section-divider"></div>
+          </div>
           <ul className="instructions">
             <li>{Instruction("Press Space to Jump Forward",   iconSpace)}</li>
             <li>{Instruction("Press Ctrl to Turn and Jump",   iconCtrl)}</li>
             <li>{Instruction("Press R to Restart",            iconR)}</li>
           </ul>
-        </div>
       </div>
     </div>
   );
