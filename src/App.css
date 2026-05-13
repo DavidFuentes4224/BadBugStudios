@@ -879,14 +879,6 @@ a:visited { background-color: transparent; }
   margin: 0 auto;
 }
 
-.sky-climbers-page .separator { color: var(--navy); }
-.sky-climbers-page .separator::after { border-bottom-color: var(--gold); }
-.sky-climbers-page .section-header { color: var(--navy) !important; }
-
-.sky-climbers-page p,
-.sky-climbers-page h1,
-.sky-climbers-page h2 { color: var(--text-dark) !important; }
-
 .sky-climbers-page .instruction { color: var(--text-dark) !important; }
 
 /* ==============================
