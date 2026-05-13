@@ -1,5 +1,5 @@
 import Unity, { UnityContext } from "react-unity-webgl";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Separator } from "../templates/separator";
 import iconSpace from '../images/Icon_Space.png';
 import iconCtrl  from '../images/Icon_Ctrl.png';
@@ -12,16 +12,16 @@ const Instruction = (msg, icon) => (
   </div>
 );
 
-export const SkyClimbers = () => {
+const SkyClimbers = () => {
   const [progression, setProgression] = useState(0);
   const [isLoaded, setIsLoaded]       = useState(false);
 
-  const unityContext = new UnityContext({
+  const unityContext = useRef(new UnityContext({
     loaderUrl:    "Build/Sky Climbers WEBGL.loader.js",
     dataUrl:      "Build/Sky Climbers WEBGL.data",
     frameworkUrl: "/Build/Sky Climbers WEBGL.framework.js",
     codeUrl:      "Build/Sky Climbers WEBGL.wasm",
-  });
+  })).current;
 
   /* eslint-disable */
   useEffect(() => {
@@ -64,3 +64,6 @@ export const SkyClimbers = () => {
     </div>
   );
 };
+
+export { SkyClimbers };
+export default SkyClimbers;
