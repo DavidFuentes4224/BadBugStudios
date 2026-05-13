@@ -3,8 +3,7 @@ import 'antd/dist/antd.css';
 import './index.css';
 import { Foot } from "./sections/footer";
 import { Home } from './pages/home';
-import { SkyClimbers } from './pages/skyclimbers';
-import React, { useState } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import {
   BrowserRouter,
   Routes,
@@ -13,9 +12,14 @@ import {
 } from "react-router-dom";
 import NoPage from './pages/nopage.jsx';
 
+const SkyClimbers = lazy(() => import('./pages/skyclimbers'));
+
 function App() {
   const [tab, setTab] = useState('home');
-  document.title = "David Fuentes";
+
+  useEffect(() => {
+    document.title = "David Fuentes";
+  }, []);
 
   return (
     <div className="App">
@@ -39,11 +43,13 @@ function App() {
             </NavLink>
           </div>
         </nav>
-        <Routes path="/">
-          <Route index element={<Home />} />
-          <Route path="skyclimbers" element={<SkyClimbers />} />
-          <Route path="*" element={<NoPage />} />
-        </Routes>
+        <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center' }}>Loading…</div>}>
+          <Routes path="/">
+            <Route index element={<Home />} />
+            <Route path="skyclimbers" element={<SkyClimbers />} />
+            <Route path="*" element={<NoPage />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
       <Foot />
     </div>

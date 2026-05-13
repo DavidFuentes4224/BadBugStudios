@@ -1,2 +1,19 @@
 [build]
   publish = "build"
+
+# Long-term cache for hashed static assets (JS, CSS, media)
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# No-cache for the HTML entry point so new deploys are picked up immediately
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"

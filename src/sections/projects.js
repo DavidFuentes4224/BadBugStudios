@@ -52,7 +52,7 @@ export const ProjectsSection = () => {
             <div key={project.title} className="project-card">
               {project.image ? (
                 <div className="project-card-image">
-                  <img src={project.image} alt={project.title} />
+                  <img src={project.image} alt={project.title} loading="lazy" />
                 </div>
               ) : (
                 <div className="project-card-image-placeholder">
