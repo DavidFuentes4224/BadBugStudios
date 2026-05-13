@@ -1,14 +1,19 @@
-import { ShowCaseHouse } from "../sections/showcasehouse"
-import { AboutSection } from "../sections/aboutsection"
-import { ContactForm } from "../sections/contact"
-
+import { Hero }            from '../sections/hero';
+import { AboutSection }    from '../sections/aboutsection';
+import { SkillsSection }   from '../sections/skills';
+import { ProjectsSection } from '../sections/projects';
+import { ExperienceSection } from '../sections/experience';
+import { ContactForm }     from '../sections/contact';
 
 export const Home = () => {
-    return (
-        <>
-            <ShowCaseHouse />
-            <AboutSection />
-            <ContactForm />
-        </>
-    )
-}
+  return (
+    <>
+      <Hero />
+      <AboutSection />
+      <SkillsSection />
+      <ProjectsSection />
+      <ExperienceSection />
+      <ContactForm />
+    </>
+  );
+};
